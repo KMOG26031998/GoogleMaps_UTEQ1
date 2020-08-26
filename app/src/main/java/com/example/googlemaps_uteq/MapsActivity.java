@@ -29,59 +29,57 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-
     }
 
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        /////////////////PUNTOS////////////////////777777
+        /////////////////PUNTOS////////////////////
         //FCI
         LatLng FCI = new LatLng(-1.0127992,-79.4703445);
-        mMap.addMarker(new MarkerOptions().position(FCI).title("FCI").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+        mMap.addMarker(new MarkerOptions().position(FCI).title("FCI").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))).showInfoWindow();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(FCI));
-
-        
-        //FCE
+            //FCE
         LatLng FCE = new LatLng(-1.0123803,-79.4700179);
-        mMap.addMarker(new MarkerOptions().position(FCE).title("FCE").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(FCE).title("FCE").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))).showInfoWindow();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(FCE));
         //FCAM
         LatLng FCAM = new LatLng(-1.0128652,-79.4708047);
-        mMap.addMarker(new MarkerOptions().position(FCAM).title("FCAM").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+        mMap.addMarker(new MarkerOptions().position(FCAM).title("FCAM").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW))).showInfoWindow();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(FCAM));
         //ENFERMERIA
         LatLng ENF= new LatLng(-1.0125912,-79.4692893);
-        mMap.addMarker(new MarkerOptions().position(ENF).title("ENFERMERIA").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(ENF).title("ENFERMERIA").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN))).showInfoWindow();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(ENF));
         //COMEDOR
         LatLng CS = new LatLng(-1.0126317,-79.4700394);
-        mMap.addMarker(new MarkerOptions().position(CS).title("COMEDOR").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE)));
+        mMap.addMarker(new MarkerOptions().position(CS).title("COMEDOR").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))).showInfoWindow();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(CS));
         //BIBLIOTECA
         LatLng BIBL = new LatLng(-1.0126579,-79.4684568);
-        mMap.addMarker(new MarkerOptions().position(BIBL).title("BIBLIOTECA").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
+        mMap.addMarker(new MarkerOptions().position(BIBL).title("BIBLIOTECA").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))).showInfoWindow();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(BIBL));
         //INSTITUTO
         LatLng INS = new LatLng(-1.0123944,-79.4695334);
-        mMap.addMarker(new MarkerOptions().position(INS).title("INSTITUTO").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
+        mMap.addMarker(new MarkerOptions().position(INS).title("INSTITUTO INFORMATICO").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET))).showInfoWindow();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(INS));
         //CENTROMEDICO
         LatLng CEN = new LatLng(-1.0126129,-79.4690479);
-        mMap.addMarker(new MarkerOptions().position(CEN).title("CENTRO MEDICO").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+        mMap.addMarker(new MarkerOptions().position(CEN).title("CENTRO MEDICO").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))).showInfoWindow();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(CEN));
         //RECTORADO
         LatLng REC = new LatLng(-1.0128676,-79.4685787);
-        mMap.addMarker(new MarkerOptions().position(REC).title("RECTORADO").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+        mMap.addMarker(new MarkerOptions().position(REC).title("RECTORADO").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))).showInfoWindow();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(REC));
         //AUDITORIO
         LatLng AUD = new LatLng(-1.0127096,-79.4676656);
-        mMap.addMarker(new MarkerOptions().position(AUD).title("AUDITORIO").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mMap.addMarker(new MarkerOptions().position(AUD).title("AUDITORIO").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))).showInfoWindow();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(AUD));
         ////BOTONES
         mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().setMapToolbarEnabled(true);
+        mMap.animateCamera( CameraUpdateFactory.zoomTo( 17.0f ) );
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         ///////POLIGONO
         Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
@@ -91,7 +89,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         new LatLng(-1.0136164,-79.4671109),
                         new LatLng(-1.0133382,-79.4718261),
                         new LatLng(-1.0119417,-79.4718937),
-                       // new LatLng(-1.011772,-79.4698741),
                         new LatLng(-1.0118206,-79.4718925),
                         new LatLng(-1.0120302,-79.4669389)
                 ));
